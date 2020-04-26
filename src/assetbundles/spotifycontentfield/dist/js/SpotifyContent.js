@@ -9,25 +9,26 @@ function fetchUrl(fieldId, validateUrl, validationError) {
 
     loader('start', spotifyContentField, fieldId, true);
 
-    $.ajax({
-        type: "POST",
-        url: validateUrl,
-        data: data,
-        dataType: 'json',
-        success: function (response) {
-            loader('stop', spotifyContentField, fieldId, true);
-            removeErrors(spotifyContentField, fieldId);
-            spotifyContentField.parents().find('iframe').remove();
-            createEmbedPreview(response, spotifyContentField);
-        },
-        error: function () {
-            loader('stop', spotifyContentField, fieldId, true);
-            spotifyContentField.parents().find('iframe').remove();
-            removeErrors(spotifyContentField, fieldId);
-            spotifyContentField.parent().append('<ul class="errors"><li>' + validationError + '</li></ul>');
-        }
-    });
-
+    if (spotifyContentField.val()) {
+        $.ajax({
+            type: "POST",
+            url: validateUrl,
+            data: data,
+            dataType: 'json',
+            success: function (response) {
+                loader('stop', spotifyContentField, fieldId, true);
+                removeErrors(spotifyContentField, fieldId);
+                spotifyContentField.parents().find('iframe').remove();
+                createEmbedPreview(response, spotifyContentField);
+            },
+            error: function () {
+                loader('stop', spotifyContentField, fieldId, true);
+                spotifyContentField.parents().find('iframe').remove();
+                removeErrors(spotifyContentField, fieldId);
+                spotifyContentField.parent().append('<ul class="errors"><li>' + validationError + '</li></ul>');
+            }
+        });
+    }
 }
 
 function createEmbedPreview(segments, spotifyContentField) {

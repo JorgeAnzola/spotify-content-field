@@ -2,7 +2,7 @@
     "name": "jorgeanzola/spotify-content",
     "description": "Embed Spotify songs, playlists, or artists.",
     "type": "craft-plugin",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "keywords": [
         "craft",
         "cms",
