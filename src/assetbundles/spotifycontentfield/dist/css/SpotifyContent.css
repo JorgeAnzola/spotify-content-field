@@ -1,0 +1,32 @@
+/**
+ * Spotify content plugin for Craft CMS
+ *
+ * SpotifyContent Field CSS
+ *
+ * @author    Jorge Anzola
+ * @copyright Copyright (c) 2020 Jorge Anzola
+ * @link      anzola.nl
+ * @package   SpotifyContent
+ * @since     1.0.0
+ */
+
+.spotify-content-embedded-player {
+  margin-top: 20px;
+}
+
+.spotify-content-loader-wrapper {
+  text-align: center;
+}
+
+.spotify-content-loader {
+  height: 60px;
+  width: 60px;
+  background: url('../img/loader.gif');
+  background-size: cover;
+  display: inline-block;
+}
+
+.spotify-content-blurred {
+    -webkit-filter:blur(1px);
+    pointer-events:none;
+}

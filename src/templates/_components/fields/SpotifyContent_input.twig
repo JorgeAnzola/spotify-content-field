@@ -1,0 +1,33 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Spotify content plugin for Craft CMS 3.x
+ *
+ * SpotifyContent Field Input
+ *
+ * @author    Jorge Anzola
+ * @copyright Copyright (c) 2020 Jorge Anzola
+ * @link      anzola.nl
+ * @package   SpotifyContent
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    id: name,
+    name: name,
+    value: value}) }}
+
+{% set validationError = '{attribute} is invalid.' | t('spotify-content', {'attribute': label}) %}
+
+{% js %}
+
+    fetchUrl("{{ namespacedId }}", "{{ alias(primarySiteUrl ~ 'spotify-content/validate-string/') }}", "{{ validationError }}");
+
+    $('input#{{ namespacedId }}').on('input', function(event) {
+        fetchUrl("{{ namespacedId }}", "{{ alias(primarySiteUrl ~ 'spotify-content/validate-string/') }}", "{{ validationError }}");
+    });
+
+{% endjs %}

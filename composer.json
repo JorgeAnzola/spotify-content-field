@@ -1,0 +1,44 @@
+{
+    "name": "jorgeanzola/spotify-content",
+    "description": "Embed Spotify songs, playlists, or artists.",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "spotify content"
+    ],
+    "support": {
+        "docs": "https://github.com/jorgeanzola/spotify-content/blob/master/README.md",
+        "issues": "https://github.com/jorgeanzola/spotify-content/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jorge Anzola",
+            "homepage": "anzola.nl"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "jorgeanzola\\spotifycontent\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Spotify content",
+        "handle": "spotify-content",
+        "developer": "Jorge Anzola",
+        "developerUrl": "anzola.nl",
+        "documentationUrl": "https://github.com/jorgeanzola/spotify-content/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/jorgeanzola/spotify-content/master/CHANGELOG.md",
+        "components": {
+            "spotify": "jorgeanzola\\spotifycontent\\services\\Spotify"
+        },
+        "class": "jorgeanzola\\spotifycontent\\SpotifyContent"
+    }
+}

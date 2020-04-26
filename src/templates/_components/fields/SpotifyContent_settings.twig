@@ -1,0 +1,20 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Spotify content plugin for Craft CMS
+ *
+ * SpotifyContent Field Settings
+ *
+ * @author    Jorge Anzola
+ * @copyright Copyright (c) 2020 Jorge Anzola
+ * @link      anzola.nl
+ * @package   SpotifyContent
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("jorgeanzola\\spotifycontent\\assetbundles\\spotifycontentfield\\SpotifyContentFieldAsset") %}
+
+{#{{ forms.textField()}#}
